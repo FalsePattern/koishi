@@ -27,5 +27,5 @@ jobs:
         with:
           version: master
 
-      - name: Run `build`
-        run: zig build
+      - name: Run `build install test benchmark`
+        run: zig build install test benchmark

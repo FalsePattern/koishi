@@ -161,7 +161,6 @@ pub fn build(b: *std.Build) !void {
         .name = "koishi_test",
         .target = target,
         .optimize = optimize,
-        .linkage = linkage,
         .single_threaded = !thread_safe,
     });
     test_exe.addCSourceFile(.{ .file = upstream.path("koishi_test.c") });
