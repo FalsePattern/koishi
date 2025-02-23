@@ -17,11 +17,14 @@ pub fn build(b: *std.Build) !void {
         .verbose = verbose,
         .tmp_dir = b.makeTempPath(),
     };
+    const koishi_include = upstream.path("include");
+    b.addNamedLazyPath("koishi_include", koishi_include);
+
     var koishi_args = std.ArrayList([]const u8).init(b.allocator);
     defer koishi_args.deinit();
     var koishi_incdirs = std.ArrayList(std.Build.LazyPath).init(b.allocator);
     defer koishi_incdirs.deinit();
-    try koishi_incdirs.append(upstream.path("include"));
+    try koishi_incdirs.append(koishi_include);
     if (thread_safe) {
         if (cc.links("int _Thread_local i; int main() {};", "_Thread_local keyword support test", &.{})) {
             try koishi_args.append("-DKOISHI_THREAD_LOCAL=_Thread_local");

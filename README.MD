@@ -22,6 +22,17 @@ your_compilation.linkLibrary(koishi_dep.artifact("koishi"));
 
 This will provide koishi as a static library to `your_compilation`.
 
+If you want to use it inside a translateC step, you can do the following:
+
+```zig
+const translateC = b.addTranslateC(.{
+    .root_source_file = b.path("..."),
+    .target = target,
+    .optimize = optimize,
+});
+translateC.addIncludePath(koishi_dep.namedLazyPath("koishi_include"));
+```
+
 ## Additional options
 
 ```
