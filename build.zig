@@ -258,7 +258,7 @@ fn pickBackend(cc: Zeson, koishi: Koishi, impl: ?Backend) !struct{Backend, Backe
     return error.UnsupportedPlatform;
 }
 
-const Backend = enum {
+pub const Backend = enum {
     //TODO boost_fcontext,
     emscripten,
     fcontext,
