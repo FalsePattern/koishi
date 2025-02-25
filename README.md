@@ -2,6 +2,8 @@
 
 This is [koishi](https://github.com/taisei-project/koishi), a portable C coroutine library, packaged for [Zig](https://ziglang.org/).
 
+If you're looking for ziggified bindings, check out [satori](https://github.com/FalsePattern/satori).
+
 ## How to use it
 
 First, update your `build.zig.zon`:
