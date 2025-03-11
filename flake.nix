@@ -6,7 +6,7 @@
       zig-overlay.url = "github:mitchellh/zig-overlay";
       zig-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
-      zls-flake.url = "github:zigtools/zls";
+      zls-flake.url = "github:zigtools/zls/0.14.0";
       zls-flake.inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -27,7 +27,7 @@
   in eachSystem systems (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        zig = zig-overlay.packages.${system}.master;
+        zig = zig-overlay.packages.${system}."0.14.0";
         zls = zls-flake.packages.${system}.zls;
       in
       rec {

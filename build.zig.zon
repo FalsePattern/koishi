@@ -1,11 +1,12 @@
 .{
-    .name = "koishi",
+    .name = .koishi,
+    .fingerprint = 0x4140e8753d34ea9c,
     .version = "0.1.0",
-    .minimum_zig_version = "0.14.0-dev.3286+05d8b565a",
+    .minimum_zig_version = "0.14.0",
     .dependencies = .{
         .koishi = .{
             .url = "git+https://github.com/taisei-project/koishi/?ref=master#57f840595829975db9bc9b36913c97bedab2ac76",
-            .hash = "122027ac8f7c14d26a49ce28f002ad5b24a6fea7460fbb31f9ee56c72833d0fa4094",
+            .hash = "N-V-__8AABE5EQAnrI98FNJqSc4o8AKtWySm_qdGD7sx-e5W",
         },
     },
     .paths = .{
